@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <typeAliases>
+        <package name="com.mofei.pojo"></package>
+    </typeAliases>
+
+
+    <environments default="mysql">
+
+        <environment id="mysql">
+
+            <transactionManager type="JDBC"></transactionManager>
+
+            <dataSource type="POOLED">
+
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"></property>
+
+                <property name="url" value="jdbc:mysql://localhost:3306/javaee?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=GMT%2B8"></property>
+
+                <property name="username" value="root"></property>
+
+                <property name="password" value="123456"></property>
+
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <mappers>
+        <!--首先会找mapper包下的所有的[接口],然后去找和接口的名字相同的XML进行扫描-->
+        <package name="com.mofei.mapper"></package>
+    </mappers>
+
+</configuration>
+
